@@ -1,8 +1,14 @@
-<?php 
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-    $con = mysqli_connect('fdb1029.awardspace.net','4238170_buzzbirdph','Titanvpn/101017','carproject');
-    if(!$con)
-    {
-        echo 'please check your Database connection';
-    }
+<?php
+$servername = "fdb1029.awardspace.net";
+$username = "4238170_buzzbirdph";
+$password = "Titanvpn/101017";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
 ?>
